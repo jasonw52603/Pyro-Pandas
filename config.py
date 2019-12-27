@@ -1,0 +1,1 @@
+rowsToIgnore = ['Cargo', 'Hatch', 'Climb']
