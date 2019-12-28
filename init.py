@@ -1,6 +1,8 @@
 import pandas as pd
+import numpy as np
 import openpyxl as xl 
 import config as cfg
+import dataFrameFunctions as dfFunc
 
 
 #init code goes here
@@ -13,10 +15,15 @@ rawSheet = pd.ExcelFile('~/Desktop/pyro-pandas/samplesheet.xlsx')
 df0 = pd.read_excel(rawSheet, dict[3])
 print(df0)
 
-for column in range(len(df0.columns)):
-    df0.rename(index={df0.columns[column]: '0'})
+df0 = dfFunc.resetColumnNames(df0)
+df0 = dfFunc.resetRowNames(df0)
 
-df0.rename(columns={'Unnamed: 0': '1'})
+for rowName in cfg.rowsToIgnore:
+    print(rowName)
+    df0 = dfFunc.deleteRow(df0, rowName)
+
+
+# df0 = df0.rename(columns={'dfdf': '1'})
 print(df0)
 
 

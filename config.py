@@ -1,1 +1,1 @@
-rowsToIgnore = ['Cargo', 'Hatch', 'Climb']
+rowsToIgnore = [0, 3, 5]
