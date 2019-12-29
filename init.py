@@ -19,11 +19,13 @@ df0 = dfFunc.resetColumnNames(df0)
 df0 = dfFunc.resetRowNames(df0)
 
 for rowName in cfg.rowsToIgnore:
-    print(rowName)
     df0 = dfFunc.deleteRow(df0, rowName)
+
+df0 = dfFunc.resetRowNames(df0)
 
 
 # df0 = df0.rename(columns={'dfdf': '1'})
+print("\n \n Final result:")
 print(df0)
 
 
