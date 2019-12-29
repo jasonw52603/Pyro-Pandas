@@ -23,6 +23,9 @@ for rowName in cfg.rowsToIgnore:
 
 df0 = dfFunc.resetRowNames(df0)
 
+for column in range(3): # Removes the extra statistics from the scouting app
+    df0 = df0[df0.columns[:-1]]
+
 
 # df0 = df0.rename(columns={'dfdf': '1'})
 print("\n \n Final result:")
